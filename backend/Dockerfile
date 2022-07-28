@@ -4,6 +4,7 @@ WORKDIR /var/www/html/
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
+
 RUN apk add --update tzdata
 
 ENV TZ=America/Sao_Paulo
@@ -27,6 +28,5 @@ RUN docker-php-ext-install pdo_mysql
 
 RUN docker-php-ext-install mbstring
 
-
-
 COPY . .
+
