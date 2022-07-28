@@ -1,7 +1,6 @@
 # Teste backend Agencia Weber
 
 ### Frist build
-in the folder backend/src copy and paste .env.example then rename for .env
 
 `docker-compose up -d --build`
 

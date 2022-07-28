@@ -1,1 +1,3 @@
-composer install && php artisan migrate
+cp .env.example .env &&
+composer install &&
+php artisan migrate
