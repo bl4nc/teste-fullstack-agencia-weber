@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_unicode_ci';
-            $table->foreignUuid('product_id');
+            $table->string('product_id');
             $table->string('product_name',255);
             $table->longText('product_description')->nullable();
             $table->integer('quantity');

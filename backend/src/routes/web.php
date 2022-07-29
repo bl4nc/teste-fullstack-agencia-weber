@@ -18,7 +18,10 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->post('product', 'ProductController@insertProduct');
+$router->group(['prefix' => 'product'], function () use ($router) {
+    $router->post('', 'ProductController@insertProduct');
+    $router->delete('{product_id}', 'ProductController@deleteProduct');
+});
 $router->group(['prefix' => 'category'], function () use ($router) {
     $router->post('', 'CategoryController@insertCategory');
     $router->delete('{category_id}', 'CategoryController@deleteCategory');
