@@ -121,7 +121,6 @@ class CategoryController extends Controller
         try {
             return response()->json(array(
                 "success" => true,
-                "message" => "Categoria encontrada.",
                 "categorias" => $caterioes
             ));
         } catch (\Throwable $th) {

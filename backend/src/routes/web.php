@@ -18,17 +18,18 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-$router->group(['prefix' => 'product'], function () use ($router) {
-    $router->post('', 'ProductController@insertProduct');
-    $router->delete('{product_id}', 'ProductController@deleteProduct');
-});
-$router->group(['prefix' => 'category'], function () use ($router) {
-    $router->post('', 'CategoryController@insertCategory');
-    $router->delete('{category_id}', 'CategoryController@deleteCategory');
-    $router->put('{category_id}', 'CategoryController@updateCategory');
-    $router->get('{category_id}', 'CategoryController@selectCategory');
-    $router->get('', 'CategoryController@selectAllCategory');
-
-});
-
+    $router->group(['prefix' => 'product'], function () use ($router) {
+        $router->post('', 'ProductController@insertProduct');
+        $router->delete('{product_id}', 'ProductController@deleteProduct');
+        $router->post('{product_id}', 'ProductController@updateProduct');
+        $router->get('{product_id}', 'ProductController@selectProduct');
+        $router->get('', 'ProductController@selectAllProducts');
+    });
+    $router->group(['prefix' => 'category'], function () use ($router) {
+        $router->post('', 'CategoryController@insertCategory');
+        $router->delete('{category_id}', 'CategoryController@deleteCategory');
+        $router->put('{category_id}', 'CategoryController@updateCategory');
+        $router->get('{category_id}', 'CategoryController@selectCategory');
+        $router->get('', 'CategoryController@selectAllCategory');
+    });
 });
